@@ -53,12 +53,9 @@ export default {
     //   const users = fetch(testApi).json();
     //   this.userDatas = users;
     // }
-    getData(){
-      axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then(response => {
-        this.userDatas = response.data
-      })
+    async getData(){
+      const response = await axios.get("https://jsonplaceholder.typicode.com/users")
+      this.userDatas = response.data
     }
   }
 }
